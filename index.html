@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StainGone — Free Stain Removal Guide: How to Get Stains Out of Clothes Fast</title>
+<meta name="description" content="StainGone is a free stain removal guide with a Stain ER wizard. Pick your stain and fabric to get a step-by-step rescue plan with timing guidance, what-not-to-do warnings, and set-in stain help. No signup, unlimited free usage.">
+<meta name="keywords" content="stain removal guide, how to remove stains from clothes, how to get stains out of clothes, how to get stains out of silk, how to remove blood from clothes, set in stain remover, stain treatment guide">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        wash: '#F2F7FA',
+        aqua: '#2A9DB8',
+        aquadark: '#1E7E94',
+        aqualight: '#DFF2F7',
+        coral: '#FF7A59',
+        coraldark: '#E85F3D',
+        corallight: '#FFE9E2',
+        ink: '#1F3A44',
+        sunbeam: '#FFC53D'
+      },
+      fontFamily: {
+        display: ['"Trebuchet MS"', '"Segoe UI"', 'Verdana', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { -webkit-font-smoothing: antialiased; }
+  input, select, textarea { color: #1F3A44; }
+  input:focus, select:focus, button:focus-visible { outline: 2px solid #2A9DB8; outline-offset: 2px; }
+
+  /* ---- wash-line ---- */
+  .line-stage { position: relative; }
+  .wash-line-svg { position: absolute; top: 0; left: 0; width: 100%; height: 26px; pointer-events: none; }
+  .hang-card { position: relative; }
+  .peg {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+    width: 18px; height: 30px; border-radius: 5px;
+    background: linear-gradient(180deg, #FF8A6B 0%, #FF7A59 55%, #E85F3D 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    z-index: 5;
+  }
+  .peg::after {
+    content: ""; position: absolute; left: 50%; top: 4px; bottom: 4px; width: 3px;
+    transform: translateX(-50%); background: rgba(0,0,0,.28); border-radius: 2px;
+  }
+  .hang-card:nth-child(even) .peg { transform: translateX(-50%) rotate(2.5deg); background: linear-gradient(180deg, #3FB6D1 0%, #2A9DB8 55%, #1E7E94 100%); }
+  .hang-card:nth-child(3n) .peg { transform: translateX(-50%) rotate(-3.5deg); }
+
+  /* ---- set-in switch ---- */
+  .switch { position: relative; display: inline-block; width: 52px; height: 28px; flex: none; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider { position: absolute; cursor: pointer; inset: 0; background: #CBD5E1; border-radius: 999px; transition: .25s; }
+  .slider::before { content: ""; position: absolute; height: 22px; width: 22px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .25s; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
+  .switch input:checked + .slider { background: #FF7A59; }
+  .switch input:checked + .slider::before { transform: translateX(24px); }
+
+  .picker-btn { transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease; }
+  .picker-btn:hover { transform: translateY(-2px); }
+  .picker-btn.selected { border-color: #2A9DB8 !important; box-shadow: 0 0 0 3px rgba(42,157,184,.25); background: #fff !important; }
+
+  .step-num {
+    width: 34px; height: 34px; border-radius: 999px; flex: none;
+    background: linear-gradient(135deg, #FF7A59, #E85F3D);
+    color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 6px rgba(232,95,61,.4);
+  }
+  .wait-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #DFF2F7; color: #1E7E94; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px; letter-spacing: .02em;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq[open] .faq-plus { transform: rotate(45deg); }
+  .faq-plus { transition: transform .2s ease; }
+
+  #print-card { display: none; }
+  @media print {
+    body.printing .no-print { display: none !important; }
+    body.printing #print-card { display: block !important; }
+    body.printing { background: #fff; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the fastest way to remove a fresh stain in an emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Act fast and stay cold: blot (never rub) the excess, flush the back of the stain with cold running water, and apply liquid dish soap or an enzyme stain remover within the first 10-15 minutes. Do not use hot water or a hot dryer until the stain is fully gone, because heat sets most stains permanently. StainGone's Stain ER wizard gives you an ordered, timed plan for 26 common stains on 8 fabric types."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I never use hot water on blood or egg stains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blood, egg, milk, sweat, and urine are protein stains. Hot water cooks the proteins and bonds them to the fabric fibers permanently, much like cooking an egg in a pan. Always treat protein stains with cold water first, and keep them away from hot dryers until the stain has completely disappeared."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get dried, set-in stains out of clothes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Set-in stains need rehydrating first: work glycerin or liquid dish soap into the dry stain for 30-60 minutes, then soak in enzyme detergent for 1-2 hours before treating normally. Expect 2-3 gentle treatment cycles rather than one harsh attempt, and judge the result after air-drying. StainGone's set-in mode builds this adjusted plan automatically and sets honest expectations for each stain type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get stains out of delicate fabrics like silk and wool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For silk, blot only and never rub, avoid hot water and chlorine bleach, and test every product on a hidden spot. For wool, use lukewarm water only (hot water plus agitation felts wool), never wring it, and never use chlorine bleach, which dissolves wool fibers. StainGone adjusts every rescue plan with fabric-specific guard rails and warnings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does bleach remove all stains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No - bleach is one of the most misused stain removers. Chlorine bleach can permanently set rust and protein stains (it yellows sweat stains), destroys wool and silk fibers, and strips color from dyed fabrics. It only helps on some white-cotton stains. Most stains respond better to dish soap, white vinegar, enzyme cleaners, hydrogen peroxide, or sunlight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is StainGone really free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. StainGone is completely free with unlimited usage. There is no signup, no paywall, no watermark, and no limit on how many rescue plans you generate. Every plan runs in your browser, so nothing you enter ever leaves your device."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body id="top" class="bg-wash text-ink font-display">
+
+<!-- ============ STICKY HEADER ============ -->
+<header class="no-print sticky top-0 z-50 bg-white/95 backdrop-blur border-b-2 border-aqualight shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="StainGone home">
+      <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-aqua to-aquadark flex items-center justify-center shadow-md">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C12 2 5 10.2 5 15a7 7 0 0 0 14 0C19 10.2 12 2 12 2zm0 5.2c.9 1.3 3.4 4.6 3.4 7.3a3.4 3.4 0 0 1-6.8 0c0-2.7 2.5-6 3.4-7.3z" opacity=".95"/><path d="M9.2 14.6a2.6 2.6 0 0 0 2.1 2.7" stroke="#fff" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+      </span>
+      <span class="text-2xl font-extrabold tracking-tight text-ink">Stain<span class="text-aqua">Gone</span></span>
+    </a>
+    <nav class="flex items-center gap-5 sm:gap-8 text-sm font-bold">
+      <a href="#top" class="text-ink hover:text-aqua transition">Home</a>
+      <a href="https://fixoraa.tech" class="text-ink hover:text-aqua transition">More Tools</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="no-print relative overflow-hidden bg-gradient-to-b from-aqualight via-wash to-wash">
+  <svg class="absolute top-6 left-0 w-full opacity-60" height="40" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,8 Q300,34 600,16 T1200,10" stroke="#2A9DB8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-8 sm:pt-16 sm:pb-10 text-center relative">
+    <div class="inline-flex items-center gap-1.5 mb-4">
+      <span class="w-3 h-4 rounded-sm bg-coral inline-block rotate-[-6deg]"></span>
+      <span class="w-3 h-4 rounded-sm bg-aqua inline-block rotate-[5deg]"></span>
+      <span class="w-3 h-4 rounded-sm bg-sunbeam inline-block rotate-[-3deg]"></span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-ink">Stain ER: rescue any stain<br class="hidden sm:block"> before it <span class="text-coral">sets in</span></h1>
+    <p class="mt-4 text-ink/70 text-base sm:text-lg max-w-2xl mx-auto">Pick your stain, pick your fabric — StainGone builds an ordered, timed rescue plan with <span class="font-bold text-aquadark">what to do</span> and <span class="font-bold text-coraldark">what NOT to do</span>, tuned for 26 stains and 8 fabrics.</p>
+    <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-2 bg-white border-2 border-aqua/50 rounded-full px-5 py-2 shadow-sm">
+      <svg class="w-4 h-4 text-aqua" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+      <span class="text-sm font-extrabold text-aquadark tracking-wide">Unlimited Free Usage</span>
+      <span class="text-xs text-ink/50 font-semibold">· no signup · no paywall · no watermark</span>
+    </div>
+  </div>
+</section>
+
+<!-- TOP AD (verbatim) -->
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pt-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <div class="origin-top scale-[0.44] sm:scale-100 shrink-0">
+        <script>
+          atOptions = { 'key' : '4e68ac77881c17fe128a46565d9a4e8c', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+        </script>
+        <script src="https://www.highrevenueformat.com/4e68ac77881c17fe128a46565d9a4e8c/invoke.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOOL ============ -->
+<main class="no-print max-w-6xl mx-auto px-4 sm:px-6 py-8">
+  <div class="bg-white rounded-3xl shadow-xl border border-aqualight overflow-hidden">
+    <div class="bg-gradient-to-r from-aqua to-aquadark px-6 sm:px-8 py-5 flex items-center gap-3">
+      <span class="text-3xl" aria-hidden="true">🧺</span>
+      <div>
+        <h2 class="text-white text-xl sm:text-2xl font-extrabold">Stain ER Wizard</h2>
+        <p class="text-white/80 text-sm font-semibold">Three quick picks → your timed rescue plan</p>
+      </div>
+    </div>
+
+    <div class="px-5 sm:px-8 py-6 sm:py-8">
+      <!-- stepper -->
+      <ol class="flex items-center gap-2 sm:gap-4 mb-8 text-xs sm:text-sm font-bold">
+        <li class="flex items-center gap-2"><span id="dot-1" class="w-7 h-7 rounded-full bg-aqua text-white flex items-center justify-center">1</span><span class="hidden sm:inline">Pick stain</span></li>
+        <li class="flex-1 h-0.5 bg-aqualight rounded"></li>
+        <li class="flex items-center gap-2"><span id="dot-2" class="w-7 h-7 rounded-full bg-slate-200 text-ink/60 flex items-center justify-center">2</span><span class="hidden sm:inline">Pick fabric</span></li>
+        <li class="flex-1 h-0.5 bg-aqualight rounded"></li>
+        <li class="flex items-center gap-2"><span id="dot-3" class="w-7 h-7 rounded-full bg-slate-200 text-ink/60 flex items-center justify-center">3</span><span class="hidden sm:inline">Get plan</span></li>
+      </ol>
+
+      <!-- STEP 1: stain -->
+      <h3 class="text-lg font-extrabold mb-1">Step 1 — What stained it?</h3>
+      <p class="text-sm text-ink/60 font-semibold mb-4">Tap a stain, or type to filter (e.g. "wine", "ink", "oil").</p>
+      <div class="relative mb-4 max-w-md">
+        <input id="stain-search" type="text" placeholder="Search 26 stains…" autocomplete="off"
+          class="w-full border-2 border-aqualight rounded-xl px-4 py-2.5 text-sm font-semibold placeholder:text-ink/30 focus:border-aqua">
+      </div>
+      <div id="stain-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3" role="listbox" aria-label="Stain types"></div>
+
+      <!-- STEP 2: fabric -->
+      <h3 class="text-lg font-extrabold mt-10 mb-1">Step 2 — What fabric?</h3>
+      <p class="text-sm text-ink/60 font-semibold mb-4">Fabric changes the rules: wool, silk and leather need very different handling than cotton.</p>
+      <div id="fabric-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3" role="listbox" aria-label="Fabric types"></div>
+
+      <!-- STEP 3: set-in + generate -->
+      <h3 class="text-lg font-extrabold mt-10 mb-4">Step 3 — Fresh or set in?</h3>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+        <label class="flex items-center gap-3 bg-corallight/60 border-2 border-coral/40 rounded-2xl px-4 py-3 cursor-pointer max-w-md">
+          <span class="switch"><input type="checkbox" id="setin-toggle"><span class="slider"></span></span>
+          <span class="text-sm font-bold">The stain has <span class="text-coraldark">dried / set in</span><br>
+          <span class="font-semibold text-ink/60 text-xs">Turn on for the adjusted set-in plan with honest expectations</span></span>
+        </label>
+        <button id="generate-btn"
+          class="flex-1 sm:flex-none bg-gradient-to-r from-coral to-coraldark text-white font-extrabold text-base sm:text-lg px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition active:translate-y-0">
+          🧪 Get my rescue plan
+        </button>
+      </div>
+      <p id="wizard-msg" class="mt-3 text-sm font-bold text-coraldark min-h-[1.5rem]" role="alert" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- ============ RESULT ============ -->
+  <section id="result" class="hidden mt-8" aria-live="polite">
+    <!-- urgency banner -->
+    <div id="urgency-banner" class="rounded-3xl p-5 sm:p-6 mb-6 text-white shadow-lg bg-gradient-to-r from-coral to-coraldark flex items-start gap-4">
+      <span class="text-4xl flex-none" aria-hidden="true">⏱</span>
+      <div>
+        <p id="urgency-label" class="text-xl sm:text-2xl font-extrabold"></p>
+        <p id="urgency-why" class="text-white/90 text-sm font-semibold mt-1"></p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-xl border border-aqualight px-5 sm:px-8 py-6 sm:py-8">
+      <div class="flex flex-wrap items-center gap-3 mb-2">
+        <span id="plan-emoji" class="text-4xl" aria-hidden="true"></span>
+        <div>
+          <h2 id="plan-title" class="text-2xl sm:text-3xl font-extrabold"></h2>
+          <p id="plan-sub" class="text-sm font-bold text-ink/60"></p>
+        </div>
+        <span id="plan-setin-badge" class="hidden ml-auto bg-corallight text-coraldark text-xs font-extrabold px-3 py-1.5 rounded-full border border-coral/50">SET-IN MODE</span>
+      </div>
+      <p class="text-sm text-ink/60 font-semibold mb-8">Follow the steps in order — each card hangs on the line with its timing. Do the <span class="text-coraldark font-bold">NOT-do list</span> below is just as important as the steps.</p>
+
+      <!-- wash-line steps -->
+      <div class="line-stage">
+        <svg class="wash-line-svg" viewBox="0 0 1000 26" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10,8 Q250,24 500,12 T1010,8" stroke="#2A9DB8" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="60" cy="9" r="4" fill="#1E7E94"/><circle cx="940" cy="9" r="4" fill="#1E7E94"/>
+        </svg>
+        <div id="steps-grid" class="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 pt-9"></div>
+      </div>
+
+      <!-- warnings -->
+      <h3 class="text-xl font-extrabold mt-12 mb-1 flex items-center gap-2"><span aria-hidden="true">🚫</span> What NOT to do</h3>
+      <p class="text-sm text-ink/60 font-semibold mb-4">These mistakes set stains permanently or damage the fabric. Specific to your stain + fabric combo.</p>
+      <div id="warnings-grid" class="grid gap-3 sm:grid-cols-2"></div>
+
+      <!-- set-in expectations -->
+      <div id="expect-box" class="hidden mt-8 bg-amber-50 border-2 border-sunbeam/70 rounded-2xl p-5">
+        <h3 class="font-extrabold text-amber-800 flex items-center gap-2 mb-2"><span aria-hidden="true">💡</span> Honest expectations for set-in stains</h3>
+        <p id="expect-text" class="text-sm font-semibold text-amber-900 leading-relaxed"></p>
+      </div>
+
+      <!-- actions -->
+      <div class="flex flex-wrap gap-3 mt-8">
+        <button id="print-btn" class="bg-aqua hover:bg-aquadark text-white font-extrabold px-5 py-2.5 rounded-xl shadow transition">🖨 Print rescue card</button>
+        <button id="copy-btn" class="bg-white border-2 border-aqua text-aquadark font-extrabold px-5 py-2.5 rounded-xl hover:bg-aqualight transition">📋 Copy plan</button>
+        <button id="save-btn" class="bg-white border-2 border-coral text-coraldark font-extrabold px-5 py-2.5 rounded-xl hover:bg-corallight transition">💾 Save plan</button>
+        <span id="action-msg" class="self-center text-sm font-bold text-aquadark" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAVED PLANS ============ -->
+  <section class="mt-8 bg-white rounded-3xl shadow border border-aqualight px-5 sm:px-8 py-6">
+    <h2 class="text-lg font-extrabold mb-1">💾 Your saved rescue plans</h2>
+    <p class="text-sm text-ink/60 font-semibold mb-4">Saved in this browser only — nothing leaves your device.</p>
+    <div id="saved-list" class="flex flex-wrap gap-2.5"></div>
+  </section>
+</main>
+
+<!-- printable rescue card (print only) -->
+<div id="print-card" aria-hidden="true"></div>
+
+<!-- BOTTOM AD (verbatim) -->
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pb-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="464498"></script>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SEO ARTICLE ============ -->
+<article id="seo-article" class="no-print max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+  <h2 class="text-2xl sm:text-3xl font-extrabold mb-6">The Complete Stain Removal Guide: How to Get Stains Out of Clothes</h2>
+
+  <p class="mb-4 leading-relaxed text-ink/80">Few household moments cause panic like watching coffee bloom across a white shirt or discovering your child has turned their school uniform into modern art. This stain removal guide exists for exactly those moments. Whether you need to know how to remove coffee from clothes five minutes before a meeting, how to get stains out of silk without destroying it, or how to rescue a favorite shirt from a stain that dried in weeks ago, the principles below — and the free Stain ER wizard above — will walk you through it step by step.</p>
+
+  <p class="mb-6 leading-relaxed text-ink/80">Stain removal is not guesswork. It is chemistry, and once you understand the four stain families, you can treat almost anything confidently instead of scrubbing hopefully. Let us start there.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">The four stain families (this changes everything)</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">Nearly every stain you will ever meet belongs to one of four families, and each family has its own rules:</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>1. Protein stains</strong> — blood, egg, milk, baby formula, sweat, urine, and grass. The golden rule: <em>cold water only</em>. Heat cooks proteins and bonds them to fibers permanently, exactly like cooking an egg in a pan. Enzyme-based cleaners are the specialist weapon here because enzymes digest proteins that soap cannot.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>2. Tannin stains</strong> — coffee, tea, red wine, fruit juice, berries, tomato sauce, and soy sauce. These plant-based brown and red pigments also hate heat at the start. Cold water flushing, mild acids (white vinegar, lemon juice), and dish soap lift them. Bar soap, oddly enough, can set tannin stains, so reach for liquid soap instead.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>3. Oil and grease stains</strong> — cooking oil, butter, lipstick base, foundation makeup, and salad dressing. Water alone cannot touch these; you need a surfactant. Liquid dish soap is the unsung hero of stain removal because it is engineered to cut grease. Absorb first with baking soda or cornstarch, then treat with dish soap, then wash in the hottest water the fabric allows.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>4. Dye and pigment stains</strong> — ink, permanent marker, turmeric and curry, mustard, and lipstick color. These need solvents: rubbing alcohol dissolves ballpoint ink, acetone handles nail polish, and glycerin rehydrates dried turmeric dye. Heat is the enemy — it drives dyes deeper, especially into synthetics like polyester.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">The golden rules: what to do in the first 60 seconds</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">When a spill happens, speed beats strength. Here is the universal first-aid sequence that works for almost every fresh stain:</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Blot, never rub.</strong> Press a clean cloth straight down onto the stain and lift. Rubbing spreads the stain wider and grinds it deeper into the weave. Work from the outside edge inward so the stain does not grow.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Flush from the back.</strong> Hold the fabric so the reverse side of the stain faces the running water. This pushes the staining substance out of the fibers instead of through them. Use cold water as your default — you can always go warmer later, but you cannot undo heat-setting.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Remove solids first.</strong> Scrape off chocolate, butter, mustard, or mud with a dull knife or spoon edge before any liquid touches the fabric. Liquids turn solids into a slurry that penetrates deeper.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Check before you dry.</strong> This is the rule people break most often. A hot dryer is the point of no return for almost every stain. Always air-dry and inspect the garment in good light; only machine-dry once the stain is completely gone.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">How to get stains out of different fabrics</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">The same stain needs different handling depending on the fabric. This is where most generic advice fails — and why the Stain ER wizard above asks for your fabric before building your plan.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Cotton</strong> is the most forgiving fabric. You can use warm or hot water, most removers, and vigorous (but still not rubbing) treatment. The main caution is colorfastness: test removers on dark or bright cotton first, since cotton dyes can bleed.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Polyester and synthetics</strong> tolerate warm water and solvents, but heat permanently sets dye stains into the fibers. If you are wondering how to remove ink or curry from a polyester shirt, the answer is: keep everything cold until the stain has fully lifted, then wash.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Wool</strong> felts and shrinks in hot water combined with agitation — an irreversible change. Use lukewarm water only, press water out gently instead of wringing, and never use chlorine bleach, which dissolves wool's protein fibers.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Silk</strong> demands the gentlest touch of all. Learning how to get stains out of silk safely means memorizing four nevers: never rub (blot only — rubbing frays the fibers into a permanent dull patch), never use chlorine bleach, never use hot water, and never wring. Test every product on a hidden spot first.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Denim</strong> bleeds indigo. Wash jeans inside out in cold water and test removers on a hidden seam, because strong treatments will fade the denim around the stain. Never use chlorine bleach on denim unless you want orange-white patches.</p>
+  <p class="mb-6 leading-relaxed text-ink/80"><strong>Leather and suede</strong> cannot be soaked or machine-washed at all. Blot stains, use absorbent powders like cornstarch for grease, stick to leather-safe cleaners, and take large or dye stains to a professional. Water leaves its own spots on suede, so restraint is a feature, not a failure.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">Set-in and dried stains: the honest guide</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">A stain that has dried — or worse, been through a hot dryer — is harder but rarely hopeless. The technique changes in two ways. First, <strong>rehydrate before you treat</strong>: work glycerin or liquid dish soap into the dry stain and give it 30 to 60 minutes to soften. Dried stains cannot lift until they are soft again. Second, <strong>soak longer and repeat gently</strong>: an enzyme-detergent soak of one to two hours, followed by two or three gentle treatment cycles, beats one aggressive scrubbing session that damages the fabric.</p>
+  <p class="mb-6 leading-relaxed text-ink/80">Set honest expectations by stain family. Dried mud and wax usually come out fully. Dried grease takes multiple dish-soap rounds. Dried tannins lighten 60 to 80 percent per cycle. Old rust and permanent marker may only fade — and knowing when to stop protects the garment. StainGone's set-in mode builds this adjusted plan automatically and tells you plainly what result to expect.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">Natural stain removers that actually work</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">You do not need a shelf of specialty chemicals. These household staples handle the vast majority of stains: <strong>white vinegar</strong> (mild acid for tannins, sweat buildup, and odors), <strong>baking soda</strong> (gentle abrasive and deodorizer; as a paste for sweat stains, as a powder to absorb grease), <strong>liquid dish soap</strong> (the best grease-cutter in your kitchen), <strong>lemon juice</strong> (acid plus mild bleaching action for whites — test on colors), <strong>table salt</strong> (draws out red wine and blood when dissolved in cold water), <strong>glycerin</strong> (rehydrates dried stains), <strong>3% hydrogen peroxide</strong> (color-safe bleach alternative for light fabrics), and <strong>sunlight</strong> (UV fades turmeric, tea, and berry shadows remarkably well).</p>
+  <p class="mb-6 leading-relaxed text-ink/80">The order matters more than the ingredient: absorb, flush cold, treat with the right remover, wait the full time, rinse, and repeat before washing. Patience is a stain remover.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">Stain removal myths that make things worse</h3>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Myth: bleach fixes everything.</strong> Chlorine bleach permanently sets rust, yellows sweat stains, destroys wool and silk, and strips colored fabrics. It helps only on some white-cotton stains.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Myth: hot water cleans better.</strong> Hot water is excellent for grease <em>after</em> pre-treating — and disastrous as a first step for protein, tannin, and dye stains.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Myth: scrub harder for better results.</strong> Scrubbing spreads stains and damages fibers. Blotting, soaking, and waiting outperform force every time.</p>
+  <p class="mb-4 leading-relaxed text-ink/80"><strong>Myth: treat mud while it is wet.</strong> Wet mud smears into a slurry that penetrates deeper. Let mud dry completely, brush it off, then treat — it is one of the easiest stains when handled correctly.</p>
+  <p class="mb-6 leading-relaxed text-ink/80"><strong>Myth: hairspray removes ink.</strong> Decades ago hairspray contained enough alcohol to work; modern formulas do not. Use real rubbing alcohol instead.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">When to call a professional</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">Home treatment covers perhaps 90 percent of stains, but some situations deserve a dry cleaner: "dry clean only" garments with significant stains, large dye stains on leather or suede, set-in permanent marker on valuable clothing, and any stain where you have already tried heat or bleach and made it worse. Tell the cleaner what the stain is and what you have already tried — that information changes their approach.</p>
+  <p class="mb-6 leading-relaxed text-ink/80">And one final rule that professionals live by: <strong>when in doubt, do less.</strong> A stain you have not set can always be treated again tomorrow. A stain you have cooked in with heat, bleach, or aggressive scrubbing may never come out. Start gentle, check your work, and repeat.</p>
+
+  <h3 class="text-xl font-extrabold mt-8 mb-3">How the StainGone Stain ER wizard works</h3>
+  <p class="mb-4 leading-relaxed text-ink/80">Instead of memorizing all of this, use the wizard at the top of this page. Choose from 26 stain types — from blood and red wine to curry, rust, and chewing gum — then choose your fabric from 8 options including wool, silk, denim, and leather. StainGone instantly builds an ordered rescue plan: how urgently you must act, every treatment step with its timing, a fabric-specific guard-rails card, and a "what NOT to do" list tuned to your exact stain-and-fabric combination. Toggle set-in mode for dried stains to get the adjusted rehydration plan plus honest expectations, then print your rescue card or save the plan for later. It is free, unlimited, and everything runs in your browser.</p>
+</article>
+
+<!-- ============ FAQS ============ -->
+<section class="no-print max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+  <h2 class="text-2xl sm:text-3xl font-extrabold mb-6 text-center">Stain removal FAQs</h2>
+  <div class="space-y-3">
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">What is the fastest way to remove a fresh stain in an emergency?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">Act fast and stay cold: blot (never rub) the excess, flush the back of the stain with cold running water, and apply liquid dish soap or an enzyme stain remover within the first 10-15 minutes. Do not use hot water or a hot dryer until the stain is fully gone, because heat sets most stains permanently. StainGone's Stain ER wizard gives you an ordered, timed plan for 26 common stains on 8 fabric types.</p>
+    </details>
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">Why should I never use hot water on blood or egg stains?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">Blood, egg, milk, sweat, and urine are protein stains. Hot water cooks the proteins and bonds them to the fabric fibers permanently, much like cooking an egg in a pan. Always treat protein stains with cold water first, and keep them away from hot dryers until the stain has completely disappeared.</p>
+    </details>
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">How do I get dried, set-in stains out of clothes?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">Set-in stains need rehydrating first: work glycerin or liquid dish soap into the dry stain for 30-60 minutes, then soak in enzyme detergent for 1-2 hours before treating normally. Expect 2-3 gentle treatment cycles rather than one harsh attempt, and judge the result after air-drying. StainGone's set-in mode builds this adjusted plan automatically and sets honest expectations for each stain type.</p>
+    </details>
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">How do I get stains out of delicate fabrics like silk and wool?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">For silk, blot only and never rub, avoid hot water and chlorine bleach, and test every product on a hidden spot. For wool, use lukewarm water only (hot water plus agitation felts wool), never wring it, and never use chlorine bleach, which dissolves wool fibers. StainGone adjusts every rescue plan with fabric-specific guard rails and warnings.</p>
+    </details>
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">Does bleach remove all stains?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">No — bleach is one of the most misused stain removers. Chlorine bleach can permanently set rust and protein stains (it yellows sweat stains), destroys wool and silk fibers, and strips color from dyed fabrics. It only helps on some white-cotton stains. Most stains respond better to dish soap, white vinegar, enzyme cleaners, hydrogen peroxide, or sunlight.</p>
+    </details>
+    <details class="faq bg-white rounded-2xl border border-aqualight shadow-sm px-5 py-4">
+      <summary class="font-extrabold cursor-pointer flex items-center justify-between gap-3 list-none">Is StainGone really free to use?<span class="faq-plus text-aqua text-2xl leading-none font-black">+</span></summary>
+      <p class="mt-3 text-sm text-ink/75 leading-relaxed font-semibold">Yes. StainGone is completely free with unlimited usage. There is no signup, no paywall, no watermark, and no limit on how many rescue plans you generate. Every plan runs in your browser, so nothing you enter ever leaves your device.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="no-print bg-ink text-white/70">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="font-extrabold text-white">Stain<span class="text-aqua">Gone</span> <span class="font-semibold text-white/50 text-sm">— free stain rescue plans, forever.</span></p>
+    <nav class="flex items-center gap-6 text-sm font-bold">
+      <a href="#top" class="hover:text-aqua transition">Home</a>
+      <a href="https://fixoraa.tech" class="hover:text-aqua transition">More Tools</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============ SHIPPED LOGIC LIB ============ -->
+<script id="staingone-stain-remover-lib">
+/* StainGone stain-rescue knowledge base + pure selector functions.
+   No DOM, no window, no localStorage here. Top-level function declarations only. */
+
+var CATEGORIES = {
+  protein: "Protein-based",
+  tannin: "Tannin-based",
+  oil: "Oil / grease-based",
+  dye: "Dye / pigment-based",
+  wax: "Wax / gum",
+  mineral: "Mineral",
+  particulate: "Particulate / soil"
+};
+
+function categoryName(c) { return CATEGORIES[c] || c; }
+
+/* urgencyMin: act within this many minutes. 0 = special-case guidance (see urgencyWhy). */
+var STAIN_DB = [
+  {
+    id: "blood", name: "Blood", emoji: "\uD83E\uDE78", category: "protein",
+    urgencyMin: 10,
+    urgencyWhy: "Blood proteins clot and bond to fibers within minutes. Once dried or exposed to heat, the iron oxidizes and the stain sets almost permanently.",
+    steps: [
+      { t: "Flush with COLD water, immediately", d: "Hold the fabric under cold running water with the back of the stain facing the stream, so blood is pushed out of the fibers instead of deeper in.", w: "Rinse 2-3 minutes" },
+      { t: "Cold salt-water soak", d: "Dissolve 2 tablespoons of table salt in a bowl of cold water and soak the stained area. Salt helps break down blood proteins.", w: "Soak 15-30 minutes" },
+      { t: "Dab hydrogen peroxide (light fabrics)", d: "Apply 3% hydrogen peroxide directly to the stain and let it foam. Rinse with cold water. Skip this on dark colors unless you test a hidden spot first.", w: "Let foam 5-10 minutes" },
+      { t: "Enzyme pre-treat", d: "Work an enzyme-based stain remover (or a dab of liquid laundry detergent) gently into the stain with your fingertip.", w: "Wait 15 minutes" },
+      { t: "Wash cold, check before drying", d: "Machine-wash in the coldest water safe for the fabric. Air-dry and inspect - only tumble-dry once the stain is completely gone.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Never use hot water on fresh blood", why: "Heat cooks the proteins and bonds them to the fabric permanently. Cold only, until the stain is gone." },
+      { text: "Do not use bar soap first", why: "Bar soap can set protein stains. Use liquid detergent or an enzyme treatment instead." },
+      { text: "Do not rub the stain", why: "Rubbing spreads blood and grinds it deeper into the weave. Blot and flush instead." },
+      { text: "Do not put it in a hot dryer 'to finish'", why: "Dryer heat will set any remaining trace permanently. Air-dry and check first." }
+    ],
+    setInNote: "Old, dried blood rarely disappears 100%, but it usually fades dramatically. Expect 2-3 gentle treatment cycles to reduce it to a faint shadow."
+  },
+  {
+    id: "coffee", name: "Coffee", emoji: "\u2615", category: "tannin",
+    urgencyMin: 15,
+    urgencyWhy: "Coffee's brown tannins soak into fibers fast. Blot and flush quickly and most of it lifts before it can set.",
+    steps: [
+      { t: "Blot up the excess", d: "Press a clean cloth or paper towel onto the spill to absorb as much liquid as possible. Blot - never rub.", w: "Work quickly" },
+      { t: "Flush with cold water", d: "Run cold water through the back of the stain for a minute or two to push the coffee out of the fibers.", w: "Rinse 1-2 minutes" },
+      { t: "Dish soap + vinegar mix", d: "Mix 1 tablespoon liquid dish soap and 1 tablespoon white vinegar into 2 cups of cold water. Sponge it onto the stain and blot.", w: "Let sit 15 minutes" },
+      { t: "Rinse and repeat if needed", d: "Rinse with cold water. If a brown shadow remains, repeat the dish-soap mix once more before washing.", w: "Second round 10 minutes" },
+      { t: "Wash warm, check before drying", d: "Wash in the warmest water safe for the fabric. Check the stain in good light before machine-drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets tannin stains. Always start cold, and only go warm after the stain has lifted." },
+      { text: "Do not use bar soap before treating", why: "Bar soap can react with tannins and make the stain harder to remove." },
+      { text: "Do not bleach colored fabrics", why: "Chlorine bleach will strip dye along with the stain. Use oxygen-based bleach if needed." }
+    ],
+    setInNote: "Dried coffee usually comes out with the glycerin + dish-soap routine below. A faint brown shadow may need one sun-drying session to fade fully."
+  },
+  {
+    id: "tea", name: "Tea", emoji: "\uD83C\uDF75", category: "tannin",
+    urgencyMin: 15,
+    urgencyWhy: "Tea tannins behave like coffee's - fast action with cold water prevents the brown ring from setting.",
+    steps: [
+      { t: "Blot the spill", d: "Absorb excess tea with a clean cloth. Work from the outside of the stain inward so it does not spread.", w: "Work quickly" },
+      { t: "Cold water flush", d: "Rinse the back of the stain under cold running water.", w: "Rinse 1-2 minutes" },
+      { t: "Lemon or vinegar dab (whites)", d: "For white or light fabrics, dab lemon juice or white vinegar onto the stain - the mild acid lifts tannin well. For colors, use the dish-soap mix instead.", w: "Let sit 10 minutes" },
+      { t: "Dish soap sponge", d: "Sponge with 1 tablespoon dish soap in 2 cups cold water, then blot dry.", w: "Let sit 10 minutes" },
+      { t: "Wash and sun-check", d: "Wash as usual. A brief spell in sunlight helps fade any last tea shadow on whites.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not pour hot water on it first", why: "Heat locks tannin into fibers. Cold first, always." },
+      { text: "Do not use lemon on dark colors without testing", why: "Lemon juice can lighten some dyes. Test a hidden seam first." },
+      { text: "Do not skip the rinse between steps", why: "Leaving soap or acid in the fabric can attract dirt later." }
+    ],
+    setInNote: "Old tea rings respond well to a glycerin pre-soften followed by the lemon/vinegar step. Repeat once if needed."
+  },
+  {
+    id: "red-wine", name: "Red Wine", emoji: "\uD83C\uDF77", category: "tannin",
+    urgencyMin: 15,
+    urgencyWhy: "Red wine's anthocyanin pigments stain fast, but salt + cold water in the first minutes can pull most of it back out.",
+    steps: [
+      { t: "Blot - do not rub", d: "Press clean cloths onto the spill to absorb wine. Keep blotting with fresh sections of cloth.", w: "Work quickly" },
+      { t: "Salt blanket", d: "Cover the stain generously with table salt. The salt draws the wine up out of the fabric as it sits.", w: "Leave 10-15 minutes" },
+      { t: "Brush off and flush cold", d: "Brush the salt away, then rinse the back of the stain under cold running water.", w: "Rinse 2 minutes" },
+      { t: "Dish soap + peroxide (light fabrics)", d: "Mix 1 part 3% hydrogen peroxide with 2 parts dish soap, dab on, and let sit. For dark fabrics use white vinegar instead of peroxide.", w: "Let sit 15-20 minutes" },
+      { t: "Wash cold, verify before drying", d: "Wash in cold or warm water safe for the fabric. Confirm the stain is gone before any heat.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water or a hot dryer", why: "Heat permanently sets red wine dye. Everything stays cold until the stain is gone." },
+      { text: "Do not trust the white-wine 'remedy' alone", why: "Pouring white wine on red wine is unreliable - salt and cold water work far better." },
+      { text: "Do not rub with a napkin", why: "Rubbing spreads the wine into a bigger, lighter stain that is harder to treat evenly." }
+    ],
+    setInNote: "Dried red wine is stubborn but not hopeless: rehydrate with glycerin, then run the peroxide/dish-soap cycles twice. Expect fading over 2-3 rounds."
+  },
+  {
+    id: "chocolate", name: "Chocolate", emoji: "\uD83C\uDF6B", category: "protein",
+    urgencyMin: 20,
+    urgencyWhy: "Chocolate is protein plus cocoa butter fat. Scrape and treat cold before the fat melts deeper into the weave.",
+    steps: [
+      { t: "Scrape off the excess", d: "Use a dull knife or spoon edge to lift away as much chocolate as possible without pressing it in.", w: "1-2 minutes" },
+      { t: "Cold water flush from the back", d: "Run cold water through the reverse side of the stain to push chocolate out.", w: "Rinse 2 minutes" },
+      { t: "Dish soap massage", d: "Work a few drops of liquid dish soap gently into the stain - it cuts the cocoa-butter fat.", w: "Let sit 10 minutes" },
+      { t: "Enzyme pre-treat", d: "Apply an enzyme stain remover or liquid detergent for the milk-protein part of the stain.", w: "Wait 15 minutes" },
+      { t: "Wash warmest-safe, check first", d: "Wash in the warmest water the fabric allows. Inspect before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water before the fat is out", why: "Heat melts chocolate deeper into fibers. Cold first, warm only after pre-treating." },
+      { text: "Do not use bar soap first", why: "Bar soap can set the protein component. Dish soap or enzyme treatment first." },
+      { text: "Do not machine-dry until it is gone", why: "Dryer heat bakes any remaining chocolate in permanently." }
+    ],
+    setInNote: "Dried chocolate responds to a glycerin rehydrate (30 min) followed by the dish-soap cycle. Repeat twice for old stains."
+  },
+  {
+    id: "grease", name: "Grease / Cooking Oil", emoji: "\uD83E\uDED4", category: "oil",
+    urgencyMin: 20,
+    urgencyWhy: "Liquid grease spreads and wicks outward fast. Absorb it first, then break it down with dish soap before any wash.",
+    steps: [
+      { t: "Absorb the excess", d: "Sprinkle baking soda, cornstarch, or talc generously over the grease to absorb it. Let the powder sit, then brush off.", w: "Leave 10-15 minutes" },
+      { t: "Dish soap directly on the stain", d: "Massage a few drops of liquid dish soap (a true grease-cutter) into the stain with your fingertip.", w: "Let sit 10 minutes" },
+      { t: "Rinse with hot-tolerable water", d: "Rinse with the hottest water the fabric can safely handle - heat helps liquefy grease once soap is present.", w: "Rinse 2 minutes" },
+      { t: "Repeat if a shadow remains", d: "If you still see a dark ring, repeat the dish-soap step before washing. Do not wash yet.", w: "Second round 10 minutes" },
+      { t: "Wash hottest-safe with enzyme detergent", d: "Wash in the hottest water safe for the fabric, using an enzyme detergent. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not wash without pre-treating", why: "The heat of a normal wash cycle sets untreated grease permanently." },
+      { text: "Do not use bar soap", why: "Bar soap is poor at cutting grease and can leave its own residue." },
+      { text: "Do not tumble-dry before it is fully gone", why: "Dryer heat is the point of no return for grease stains." }
+    ],
+    setInNote: "Old grease needs patience: extend the dish-soap soak to 30-60 minutes and run 2-3 cycles. Whites can take an oxygen-bleach overnight soak."
+  },
+  {
+    id: "butter", name: "Butter / Margarine", emoji: "🧈", category: "oil",
+    urgencyMin: 20,
+    urgencyWhy: "Butter is fat plus milk solids - scrape it off, then treat it like a grease stain with dish soap.",
+    steps: [
+      { t: "Scrape off the excess", d: "Lift away solid butter with a dull knife. Blot any melted butter with a paper towel.", w: "1-2 minutes" },
+      { t: "Dish soap treatment", d: "Work liquid dish soap into the stain to break down the fat.", w: "Let sit 10-15 minutes" },
+      { t: "Hot-tolerable rinse", d: "Rinse with the hottest water the fabric allows.", w: "Rinse 2 minutes" },
+      { t: "Wash hottest-safe", d: "Machine-wash in the hottest water safe for the fabric with regular detergent. Verify before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use cold water alone", why: "Cold water cannot melt butterfat - you need soap plus heat the fabric can handle." },
+      { text: "Do not iron over the stain", why: "Iron heat drives butterfat permanently into fibers." },
+      { text: "Do not skip the dish-soap step", why: "Regular laundry detergent alone often leaves a butter shadow." }
+    ],
+    setInNote: "Dried butter stains lift with a longer dish-soap soak (30+ minutes). Repeat if a faint oily ring persists."
+  },
+  {
+    id: "grass", name: "Grass Stain", emoji: "\uD83C\uDF31", category: "protein",
+    urgencyMin: 30,
+    urgencyWhy: "Grass stains are chlorophyll plus plant proteins. Alcohol or vinegar breaks the green pigment down before washing.",
+    steps: [
+      { t: "Sponge with white vinegar or rubbing alcohol", d: "Saturate the stain with white vinegar or rubbing alcohol and let it work on the chlorophyll.", w: "Let sit 15-30 minutes" },
+      { t: "Dish soap + enzyme paste", d: "Work in a paste of liquid detergent (or dish soap) and let the enzymes attack the plant proteins.", w: "Wait 15 minutes" },
+      { t: "Wash warmest-safe with enzyme detergent", d: "Wash in the warmest water safe for the fabric. Sunlight after washing fades leftover green.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets the protein part of grass stains." },
+      { text: "Do not use chlorine bleach on colors", why: "It will bleach the fabric along with the stain." },
+      { text: "Do not use ammonia on wool or silk", why: "Ammonia damages animal fibers. Stick to vinegar or alcohol." }
+    ],
+    setInNote: "Old grass stains need a longer alcohol soak (up to an hour) and often a second wash. Sun-drying between attempts fades chlorophyll noticeably."
+  },
+  {
+    id: "mud", name: "Mud / Dirt", emoji: "\uD83D\uDFE4", category: "particulate",
+    urgencyMin: 0,
+    urgencyWhy: "Counter-intuitive but true: do NOT treat mud wet. Let it dry completely first - wet mud smears and drives soil deeper.",
+    steps: [
+      { t: "Let it dry completely", d: "Resist the urge to rinse. Leave the garment until the mud is fully dry and crumbly.", w: "Air-dry 1-3 hours" },
+      { t: "Brush and shake off", d: "Take it outside and brush dried mud off with a stiff brush or old toothbrush. Shake the garment well.", w: "2-3 minutes" },
+      { t: "Cold soak with dish soap", d: "Soak the stained area in cold water with a squirt of dish soap to loosen remaining soil.", w: "Soak 30 minutes" },
+      { t: "Wash with enzyme detergent", d: "Machine-wash normally with an enzyme detergent. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not rinse wet mud", why: "Water turns mud into a slurry that penetrates deeper into the weave." },
+      { text: "Do not rub wet mud", why: "Rubbing grinds soil particles into the fibers." },
+      { text: "Do not use hot water on clay-heavy mud first", why: "Heat can set iron-rich clay soils. Start cold." }
+    ],
+    setInNote: "Dried mud is actually the easiest 'set' stain - the dry-first method works even on old mud. Extend the soak to an hour for caked-on soil."
+  },
+  {
+    id: "ink-ballpoint", name: "Ballpoint Ink", emoji: "\uD83D\uDD8A", category: "dye",
+    urgencyMin: 30,
+    urgencyWhy: "Ballpoint ink is oil-based dye. Rubbing alcohol dissolves it - but only if you dab before heat or water spread it.",
+    steps: [
+      { t: "Place stain face-down on a towel", d: "Lay the stained area face-down on a clean white paper towel so ink transfers out onto the towel.", w: "Set up 1 minute" },
+      { t: "Dab rubbing alcohol from the back", d: "Dab (do not rub) isopropyl rubbing alcohol onto the back of the stain. The ink should bleed onto the towel below.", w: "Work 5-10 minutes" },
+      { t: "Rotate to clean towel sections", d: "Move the stain to a fresh section of towel as ink transfers, so you are not re-depositing it.", w: "Until no more ink transfers" },
+      { t: "Dish-soap rinse and wash", d: "Rinse with cold water and a drop of dish soap, then wash normally. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not rinse with water first", why: "Water spreads many ballpoint inks into a bigger stain." },
+      { text: "Do not rub the stain", why: "Rubbing pushes ink sideways into clean fabric." },
+      { text: "Do not use a hot dryer before it is gone", why: "Heat sets ink dye permanently." },
+      { text: "Do not rely on hairspray", why: "Modern hairsprays contain little alcohol - use real rubbing alcohol instead." }
+    ],
+    setInNote: "Dried ink needs a longer alcohol soak: saturate, cover with plastic wrap for 30 minutes, then dab. Repeat 2-3 times; expect fading rather than full removal on old stains."
+  },
+  {
+    id: "ink-marker", name: "Permanent Marker", emoji: "\uD83D\uDD8B", category: "dye",
+    urgencyMin: 30,
+    urgencyWhy: "Permanent marker is designed not to budge - alcohol-based solvents are the only home option, and speed matters.",
+    steps: [
+      { t: "Dab rubbing alcohol or sanitizer", d: "Blot the mark with rubbing alcohol or an alcohol-based hand sanitizer. Work from the outside in.", w: "Work 5-10 minutes" },
+      { t: "Try acetone for stubborn marks", d: "For marks that resist alcohol, dab acetone-based nail polish remover - but TEST a hidden spot first, and NEVER use acetone on acetate or triacetate fabrics (it dissolves them).", w: "Dab gently 5 minutes" },
+      { t: "Wash cold", d: "Rinse with cold water and wash normally. Check before any heat.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use water alone", why: "Water does nothing to permanent marker and can spread it." },
+      { text: "Do not use acetone on acetate fabrics", why: "Acetone dissolves acetate and triacetate - the fabric itself will melt." },
+      { text: "Do not expect miracles on old marks", why: "Set permanent marker often only fades. Stop before you damage the fabric." }
+    ],
+    setInNote: "Old permanent marker rarely comes out fully at home. Repeated alcohol soaks may fade it 50-70%. For valuable garments, a professional cleaner is the honest next step."
+  },
+  {
+    id: "sweat", name: "Sweat / Deodorant", emoji: "\uD83D\uDCA6", category: "protein",
+    urgencyMin: 60,
+    urgencyWhy: "Sweat plus deodorant builds up as yellow protein-mineral deposits. Vinegar and baking soda dissolve the buildup bleach cannot.",
+    steps: [
+      { t: "Vinegar soak", d: "Soak the stained area in cold water mixed with white vinegar (about 1 part vinegar to 4 parts water).", w: "Soak 30 minutes" },
+      { t: "Baking soda paste", d: "Make a paste of 3 parts baking soda to 1 part water, spread it on the stain, and gently work it in.", w: "Leave 30-60 minutes" },
+      { t: "Wash with enzyme detergent", d: "Wash in the warmest water safe for the fabric using an enzyme detergent. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use chlorine bleach on sweat stains", why: "Bleach reacts with sweat proteins and turns the yellow WORSE, not better." },
+      { text: "Do not use a hot dryer before it is gone", why: "Heat bakes the protein-mineral deposit in." },
+      { text: "Do not ignore the deodorant itself", why: "Apply antiperspirant to fully dry skin and let it dry before dressing to prevent future buildup." }
+    ],
+    setInNote: "Old yellow underarm stains need the full vinegar soak plus baking soda paste, possibly twice. On whites, add 3% hydrogen peroxide to the paste."
+  },
+  {
+    id: "tomato", name: "Tomato Sauce", emoji: "\uD83C\uDF45", category: "tannin",
+    urgencyMin: 15,
+    urgencyWhy: "Tomato sauce is tannin plus oil. Scrape, flush cold, and treat both parts before heat touches it.",
+    steps: [
+      { t: "Scrape off the excess", d: "Lift away sauce with a spoon or dull knife, working from the outside in so it does not spread.", w: "1-2 minutes" },
+      { t: "Flush cold from the back", d: "Run cold water through the reverse side of the fabric.", w: "Rinse 2 minutes" },
+      { t: "Dish soap sponge", d: "Sponge with dish soap and cold water - the soap handles the oily part of the sauce.", w: "Let sit 15 minutes" },
+      { t: "White vinegar dab", d: "Dab white vinegar on any remaining orange tint to lift the tannin.", w: "Let sit 10 minutes" },
+      { t: "Wash cold/warm, verify", d: "Wash in cold or warm water safe for the fabric. Confirm the stain is gone before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets both the tannin and the oil components." },
+      { text: "Do not rub with a napkin", why: "Rubbing spreads tomato into a wider, thinner stain." },
+      { text: "Do not use bar soap before treating", why: "Bar soap can set tannin stains." }
+    ],
+    setInNote: "Dried tomato sauce: rehydrate with glycerin for 30 minutes, then run the dish-soap + vinegar steps. Sunlight fades leftover orange tint."
+  }
+];
+
+STAIN_DB.push(
+  {
+    id: "curry", name: "Curry / Turmeric", emoji: "\uD83C\uDF5B", category: "dye",
+    urgencyMin: 20,
+    urgencyWhy: "Turmeric's curcumin is an oil-soluble yellow dye that bonds fast. Treat with soap/glycerin, and let sunlight do the final fading.",
+    steps: [
+      { t: "Scrape and flush cold", d: "Remove excess curry, then rinse the back of the stain under cold water.", w: "Rinse 2 minutes" },
+      { t: "Glycerin or dish soap", d: "Work glycerin (or liquid dish soap) into the stain - turmeric dissolves in oils and surfactants, not water.", w: "Let sit 15-30 minutes" },
+      { t: "White vinegar rinse", d: "Rinse with a mix of white vinegar and cold water to lift remaining color.", w: "Rinse 2 minutes" },
+      { t: "Wash, then sun-dry", d: "Wash normally, then dry the garment in direct sunlight - UV light fades turmeric dramatically. This step matters.", w: "Sun 2-4 hours" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets turmeric dye into fibers." },
+      { text: "Do not use chlorine bleach on colors", why: "Bleach attacks the fabric dye along with the turmeric." },
+      { text: "Do not skip the sunlight step", why: "Sun-UV is the single most effective turmeric fader - washing alone often leaves yellow." }
+    ],
+    setInNote: "Old turmeric stains: glycerin for a full hour, then wash + sun cycles. Expect a faint yellow ghost to remain after the first round; it fades with repeated sun exposure."
+  },
+  {
+    id: "lipstick", name: "Lipstick", emoji: "\uD83D\uDC84", category: "dye",
+    urgencyMin: 30,
+    urgencyWhy: "Lipstick is wax + oil + dye. Break down the wax base first, then lift the remaining color with alcohol.",
+    steps: [
+      { t: "Scrape off the excess", d: "Gently lift away lipstick with a dull knife without pressing it deeper.", w: "1-2 minutes" },
+      { t: "Dish soap or glycerin", d: "Work liquid dish soap or glycerin into the stain to dissolve the waxy, oily base.", w: "Let sit 15 minutes" },
+      { t: "Rubbing alcohol for the dye", d: "Dab rubbing alcohol on any remaining color to lift the dye component. Blot, do not rub.", w: "Work 5 minutes" },
+      { t: "Wash warmest-safe", d: "Wash in the warmest water safe for the fabric. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat melts the wax deeper into the weave." },
+      { text: "Do not rub with tissue", why: "Tissue shreds and grinds pigment in. Use a clean cloth and blotting." },
+      { text: "Do not bleach colored fabrics", why: "Chlorine bleach will damage the garment's own color." }
+    ],
+    setInNote: "Dried lipstick: repeat the glycerin + alcohol cycle twice. The wax base usually lifts; judge the dye shadow after air-drying."
+  },
+  {
+    id: "makeup", name: "Foundation / Makeup", emoji: "\uD83D\uDC85", category: "oil",
+    urgencyMin: 30,
+    urgencyWhy: "Liquid foundation is oil + pigment. Surfactants (dish soap, shaving cream) break the oil base so the pigment can wash out.",
+    steps: [
+      { t: "Blot away the excess", d: "Lift off foundation with a clean cloth. Do not smear it wider.", w: "1-2 minutes" },
+      { t: "Dish soap or shaving cream", d: "Work liquid dish soap (or plain white shaving cream - a classic makeup-remover trick) into the stain.", w: "Let sit 10-15 minutes" },
+      { t: "Rubbing alcohol for waterproof formulas", d: "If the makeup is waterproof or long-wear, dab rubbing alcohol to break the film-formers.", w: "Work 5 minutes" },
+      { t: "Wash normally", d: "Rinse and machine-wash. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not rinse with water only", why: "Oil-based makeup repels water - you need a surfactant first." },
+      { text: "Do not use a hot dryer before it is gone", why: "Heat sets the pigment permanently." },
+      { text: "Do not use makeup remover wipes as the only step", why: "Wipes spread the pigment; follow with soap and a real wash." }
+    ],
+    setInNote: "Set foundation stains respond to a second dish-soap round. Whites can take an oxygen-bleach soak after the soap step."
+  },
+  {
+    id: "nail-polish", name: "Nail Polish", emoji: "\uD83D\uDC85", category: "dye",
+    urgencyMin: 15,
+    urgencyWhy: "Nail polish is lacquer - acetone dissolves it fast, but only on fabrics that can survive acetone.",
+    steps: [
+      { t: "Blot excess while wet", d: "If still wet, blot gently. Do not wipe - wiping spreads lacquer.", w: "Work quickly" },
+      { t: "Test, then dab acetone", d: "Test acetone (nail polish remover) on a hidden spot. Then dab it onto the back of the stain over a paper towel, moving to clean towel sections.", w: "Work 5-10 minutes" },
+      { t: "Dish-soap rinse", d: "Rinse with cold water and a drop of dish soap to remove acetone residue.", w: "Rinse 2 minutes" },
+      { t: "Wash normally", d: "Machine-wash and check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "NEVER use acetone on acetate or triacetate", why: "Acetone dissolves these fabrics themselves - the garment will melt." },
+      { text: "Do not use water as the main treatment", why: "Water does not dissolve dried lacquer." },
+      { text: "Do not use non-acetone remover on tough polish", why: "Non-acetone formulas are much weaker; test acetone first where safe." }
+    ],
+    setInNote: "Dried nail polish still lifts with acetone: saturate the spot, cover with plastic wrap for 10 minutes, then dab. Repeat with fresh towel sections."
+  },
+  {
+    id: "gum", name: "Chewing Gum", emoji: "\uD83C\uDF6C", category: "wax",
+    urgencyMin: 30,
+    urgencyWhy: "Gum is a soft polymer - freezing makes it brittle so it cracks off instead of smearing.",
+    steps: [
+      { t: "Freeze the gum", d: "Hold ice cubes in a plastic bag against the gum (or put the garment in the freezer) until the gum is rock-hard.", w: "20-30 minutes" },
+      { t: "Crack and scrape off", d: "Crack the frozen gum with a dull knife or spoon and lift the pieces away.", w: "2-3 minutes" },
+      { t: "Alcohol on the residue", d: "Dab rubbing alcohol on any sticky residue left behind, then blot.", w: "Work 5 minutes" },
+      { t: "Wash normally", d: "Machine-wash as usual.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water", why: "Heat melts gum deeper into the fibers." },
+      { text: "Do not pull the gum", why: "Pulling stretches and distorts the fabric." },
+      { text: "Do not cut near the fabric", why: "Scissors slip - scrape with a dull edge instead." }
+    ],
+    setInNote: "Old, hardened gum is actually easier: it is already brittle, so freeze + crack works even on months-old gum."
+  },
+  {
+    id: "wax", name: "Candle Wax", emoji: "\uD83D\uDD6F", category: "wax",
+    urgencyMin: 30,
+    urgencyWhy: "Wax re-melts with gentle heat - the iron-and-paper-towel method pulls it out of the fibers cleanly.",
+    steps: [
+      { t: "Harden and scrape", d: "Let the wax harden fully (ice helps), then scrape off the excess with a dull knife.", w: "5 minutes" },
+      { t: "Iron it out", d: "Place the stain between clean paper towels or plain paper. Press a warm (not hot) iron on top - the wax melts into the towel. Replace the towel and repeat.", w: "Repeat 3-5 times" },
+      { t: "Alcohol or dish soap on dye tint", d: "Colored candles leave dye: dab rubbing alcohol or dish soap on the tint, then rinse.", w: "Work 5 minutes" },
+      { t: "Wash normally", d: "Machine-wash and check.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not hot-wash before the wax is out", why: "Wash heat melts wax through the whole load." },
+      { text: "Do not scrape with a sharp blade", why: "Sharp edges cut fibers along with the wax." },
+      { text: "Do not use a scorching iron", why: "Too-hot iron scorches fabric and can set the candle dye." }
+    ],
+    setInNote: "The iron method works on old wax too. If a dye tint remains after wax removal, treat it as a dye stain with rubbing alcohol."
+  },
+  {
+    id: "rust", name: "Rust", emoji: "\uD83D\uDD29", category: "mineral",
+    urgencyMin: 60,
+    urgencyWhy: "Rust is iron oxide - acids (lemon, vinegar) plus sunlight reduce it. Bleach and heat make it permanent.",
+    steps: [
+      { t: "Lemon juice + salt in the sun", d: "Saturate the stain with lemon juice, sprinkle table salt over it, and lay the garment in direct sunlight.", w: "Sun 1-2 hours" },
+      { t: "Rinse and assess", d: "Rinse with cold water. If orange remains, repeat the lemon-salt-sun step.", w: "Second round 1 hour" },
+      { t: "White vinegar soak (alternative)", d: "If no lemon is handy, soak in undiluted white vinegar instead.", w: "Soak 1-2 hours" },
+      { t: "Wash cold", d: "Wash in cold water. Never let heat near a rust stain until it is gone.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "NEVER use chlorine bleach on rust", why: "Bleach reacts with iron and sets rust permanently - the most common rust mistake." },
+      { text: "NEVER use hot water or a hot dryer", why: "Heat bakes iron oxide into the fibers for good." },
+      { text: "Do not use regular soap first", why: "Soap can set mineral stains. Acid treatment comes first." }
+    ],
+    setInNote: "Old rust is the toughest home stain: expect lightening rather than erasing, over 2-3 lemon-salt-sun cycles. A commercial rust remover (oxalic acid based) is the last resort - follow its label exactly."
+  },
+  {
+    id: "urine", name: "Urine", emoji: "\uD83D\uDEBD", category: "protein",
+    urgencyMin: 20,
+    urgencyWhy: "Urine is protein plus uric acid salts. Enzyme cleaners are the key - they digest what soap cannot.",
+    steps: [
+      { t: "Blot and rinse cold", d: "Blot up liquid, then rinse the area with cold water.", w: "Rinse 2 minutes" },
+      { t: "Enzyme cleaner soak", d: "Saturate with an enzyme-based cleaner (pet-stain formulas work well) - enzymes break down uric acid and proteins.", w: "Soak 30 minutes" },
+      { t: "White vinegar rinse", d: "Rinse with a white-vinegar-and-water mix to neutralize odor.", w: "Rinse 2 minutes" },
+      { t: "Wash cold/warm with enzyme detergent", d: "Machine-wash with an enzyme detergent. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water", why: "Heat sets both the protein and the odor." },
+      { text: "Do not use ammonia-based cleaners", why: "Ammonia smells like urine to pets and invites repeat accidents - and it sets the stain." },
+      { text: "Do not mix chlorine bleach with urine", why: "Bleach plus urine's ammonia creates irritating chloramine fumes." }
+    ],
+    setInNote: "Dried urine needs a longer enzyme soak (1-2 hours) and sometimes a second cycle. Lingering odor means the enzymes need more time, not stronger chemicals."
+  },
+  {
+    id: "milk", name: "Milk / Baby Formula", emoji: "\uD83E\uDD5B", category: "protein",
+    urgencyMin: 15,
+    urgencyWhy: "Milk is protein + fat that sours and smells if left. Cold water and enzymes handle it easily when fresh.",
+    steps: [
+      { t: "Flush with cold water", d: "Rinse the stain under cold running water, back side facing the stream.", w: "Rinse 2 minutes" },
+      { t: "Enzyme pre-treat", d: "Apply enzyme stain remover or liquid detergent and work in gently.", w: "Wait 15 minutes" },
+      { t: "Wash cold/warm", d: "Machine-wash. Check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water", why: "Heat cooks milk protein into the fabric and bakes in sour-milk odor." },
+      { text: "Do not use bar soap first", why: "Bar soap can set protein stains." },
+      { text: "Do not leave it - milk sours", why: "Dried milk develops a rancid smell that is harder to remove than the stain." }
+    ],
+    setInNote: "Soured, dried milk: cold-water soak for an hour with enzyme detergent, then a white-vinegar rinse for the odor before washing."
+  },
+  {
+    id: "egg", name: "Egg", emoji: "\uD83C\uDF73", category: "protein",
+    urgencyMin: 10,
+    urgencyWhy: "Egg protein cooks on contact with heat - cold water is the entire game for the first minutes.",
+    steps: [
+      { t: "Scrape and flush COLD", d: "Scrape off egg with a dull knife, then flush under COLD running water. Never warm, never hot.", w: "Rinse 2-3 minutes" },
+      { t: "Salt sprinkle", d: "Sprinkle table salt on the damp stain - it draws out protein - then rinse cold.", w: "Leave 10 minutes" },
+      { t: "Enzyme or dish soap", d: "Work in enzyme stain remover or dish soap gently.", w: "Wait 15 minutes" },
+      { t: "Wash cold", d: "Wash in cold water. Verify before any heat.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water - the #1 egg mistake", why: "Hot water literally cooks the egg onto the fabric, like a tiny omelet in the weave." },
+      { text: "Do not rub", why: "Rubbing pushes egg deeper. Scrape and flush instead." },
+      { text: "Do not use a hot dryer before it is gone", why: "Dryer heat finishes cooking the protein in permanently." }
+    ],
+    setInNote: "Dried egg: soak in cold salt water for 1-2 hours to rehydrate, then run the enzyme step. On whites, 3% hydrogen peroxide helps with the yellow tint."
+  },
+  {
+    id: "juice", name: "Fruit Juice / Berries", emoji: "\uD83C\uDF52", category: "tannin",
+    urgencyMin: 20,
+    urgencyWhy: "Berry and fruit juices are tannin + natural dye. Cold water plus mild acid lifts them; sunlight fades the rest.",
+    steps: [
+      { t: "Flush cold from the back", d: "Run cold water through the reverse side of the stain immediately.", w: "Rinse 2 minutes" },
+      { t: "Vinegar or lemon dab", d: "Dab white vinegar (any fabric) or lemon juice (whites/light) onto the stain - mild acid lifts tannin.", w: "Let sit 15 minutes" },
+      { t: "Dish-soap wash", d: "Sponge with dish soap and cold water, then rinse.", w: "Work 5 minutes" },
+      { t: "Wash and sun-dry", d: "Wash normally, then dry in sunlight to fade any remaining tint.", w: "Sun 1-2 hours" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets fruit tannins and dyes." },
+      { text: "Do not use bar soap before treating", why: "Bar soap can set tannin stains." },
+      { text: "Do not bleach colored fabrics", why: "Chlorine bleach strips the garment's own dye." }
+    ],
+    setInNote: "Dried berry stains: glycerin rehydrate for 30 minutes, then the vinegar step. Sunlight between attempts fades the purple/red tint noticeably."
+  },
+  {
+    id: "mustard", name: "Mustard", emoji: "\uD83C\uDF2D", category: "dye",
+    urgencyMin: 15,
+    urgencyWhy: "Mustard is turmeric dye plus oil and vinegar. Scrape without spreading, then treat the dye with glycerin.",
+    steps: [
+      { t: "Scrape - do not spread", d: "Lift mustard off with a spoon, working inward. Do not wipe - wiping grinds turmeric dye in.", w: "1-2 minutes" },
+      { t: "Cold flush from the back", d: "Rinse the reverse side under cold water.", w: "Rinse 2 minutes" },
+      { t: "Glycerin treatment", d: "Work glycerin into the stain to rehydrate and lift the turmeric dye.", w: "Let sit 15-30 minutes" },
+      { t: "Dish soap + vinegar", d: "Sponge with dish soap and white vinegar, then rinse cold.", w: "Work 5 minutes" },
+      { t: "Wash and check", d: "Wash normally. Sun-dry to fade any faint yellow that remains.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water", why: "Heat sets turmeric dye." },
+      { text: "Do not rub or wipe", why: "Mustard spreads into a wide thin stain that is much harder to treat evenly." },
+      { text: "Do not use bar soap first", why: "Bar soap can set the dye component." }
+    ],
+    setInNote: "Dried mustard is notoriously stubborn: glycerin for a full hour, then repeat the soap/vinegar steps. A faint yellow ghost may need several sun sessions."
+  },
+  {
+    id: "soy", name: "Soy Sauce", emoji: "\uD83C\uDF76", category: "tannin",
+    urgencyMin: 15,
+    urgencyWhy: "Soy sauce is fermented tannin plus salt. Blot, flush cold, and treat like other tannin stains.",
+    steps: [
+      { t: "Blot up the excess", d: "Press a clean cloth onto the spill. Do not rub.", w: "Work quickly" },
+      { t: "Cold water flush", d: "Rinse the back of the stain under cold running water.", w: "Rinse 2 minutes" },
+      { t: "Dish soap + vinegar", d: "Sponge with a mix of dish soap and white vinegar in cold water.", w: "Let sit 15 minutes" },
+      { t: "Wash normally", d: "Machine-wash and check before drying.", w: "Full wash cycle" }
+    ],
+    donts: [
+      { text: "Do not use hot water first", why: "Heat sets the dark tannin color." },
+      { text: "Do not scrub with salt", why: "Salt crystals are abrasive and damage fibers - dissolve salt in water instead." },
+      { text: "Do not bleach colored fabrics", why: "Chlorine bleach attacks the garment dye." }
+    ],
+    setInNote: "Dried soy sauce: rehydrate with glycerin for 30 minutes, then run the dish-soap + vinegar step twice."
+  }
+);
+
+var FABRIC_DB = [
+  {
+    id: "cotton", name: "Cotton", emoji: "\uD83D\uDC55",
+    guard: "Cotton is the toughest common fabric: you can use warm or hot water and most stain removers. On dark or bright cotton, still test removers on a hidden spot first - cotton dyes can bleed.",
+    donts: [
+      { text: "Do not skip the colorfast test on dark cotton", why: "Bright cotton dyes can bleed with peroxide or strong removers." },
+      { text: "Do not machine-dry before the stain is gone", why: "Applies to every fabric: dryer heat sets almost any remaining stain." }
+    ]
+  },
+  {
+    id: "polyester", name: "Polyester / Synthetics", emoji: "\uD83D\uDC57",
+    guard: "Synthetics tolerate warm water and most solvents, but heat SETS dye-based stains (ink, curry, lipstick) into polyester. Keep everything cold until the stain has fully lifted.",
+    donts: [
+      { text: "No hot water or dryer before dye stains are gone", why: "Heat melts dye stains permanently into synthetic fibers." },
+      { text: "Do not use acetone near heat sources", why: "Acetone is flammable - use it in ventilated rooms away from the dryer." }
+    ]
+  },
+  {
+    id: "wool", name: "Wool", emoji: "\uD83E\uDDE5",
+    guard: "Wool felts and shrinks in hot water plus agitation. Use LUKEWARM water only, press water out gently (never wring), and lay flat to dry.",
+    donts: [
+      { text: "No chlorine bleach on wool - ever", why: "Chlorine bleach dissolves wool's protein fibers, weakening and yellowing the garment." },
+      { text: "No hot water", why: "Hot water + agitation felts wool, shrinking and matting it irreversibly." },
+      { text: "No wringing", why: "Wringing stretches and distorts wet wool fibers." },
+      { text: "No ammonia-based cleaners", why: "Ammonia damages animal fibers like wool and silk." }
+    ]
+  },
+  {
+    id: "silk", name: "Silk", emoji: "\uD83E\uDD8B",
+    guard: "Silk is delicate: BLOT only, never rub - rubbing breaks silk fibers and leaves a fuzzy patch. No hot water, no wringing, and test every product on a hidden spot.",
+    donts: [
+      { text: "Never rub silk - blot only", why: "Rubbing frays silk fibers and creates a permanent dull patch." },
+      { text: "No chlorine bleach on silk", why: "Bleach destroys silk fibers and yellows the fabric." },
+      { text: "No hot water", why: "Heat weakens and dulls silk." },
+      { text: "No wringing", why: "Wringing stretches silk out of shape." }
+    ]
+  },
+  {
+    id: "linen", name: "Linen", emoji: "\uD83C\uDF3E",
+    guard: "Linen handles like cotton but wrinkles and weakens with harsh wringing. Press water out gently; avoid chlorine bleach on colored linen.",
+    donts: [
+      { text: "Do not wring linen harshly", why: "Wringing breaks linen fibers and sets deep creases." },
+      { text: "No chlorine bleach on colored linen", why: "It strips linen dyes unevenly." }
+    ]
+  },
+  {
+    id: "denim", name: "Denim / Jeans", emoji: "\uD83D\uDC56",
+    guard: "Denim bleeds indigo dye. Wash inside out in cold water, and test any remover on a hidden seam - strong treatments will fade the denim around the stain.",
+    donts: [
+      { text: "No chlorine bleach on denim", why: "Bleach strips indigo and leaves orange-white patches." },
+      { text: "Cold water only", why: "Warm water accelerates indigo bleeding across the garment." },
+      { text: "Wash inside out", why: "Protects the outer face from fading during treatment washes." }
+    ]
+  },
+  {
+    id: "leather", name: "Leather", emoji: "\uD83D\uDC5C",
+    guard: "Leather cannot be soaked or machine-washed. Blot stains, use only leather-safe cleaners, and condition the spot afterward. Large or dye stains belong with a professional leather cleaner.",
+    donts: [
+      { text: "Do not soak leather", why: "Water soaking stiffens, spots, and can rot leather." },
+      { text: "Do not machine-wash leather", why: "Agitation and detergent destroy leather's finish and structure." },
+      { text: "No bleach or harsh solvents", why: "They strip leather dye and finish, leaving a pale patch." },
+      { text: "No direct heat to dry", why: "Heat cracks leather. Air-dry away from radiators." }
+    ]
+  },
+  {
+    id: "suede", name: "Suede", emoji: "\uD83E\uDDE4",
+    guard: "Suede hates water: blot only, never soak. A suede eraser and soft brush handle most dry soil; water often leaves its own spots. Big stains go to a professional.",
+    donts: [
+      { text: "Do not soak suede", why: "Water leaves permanent spots and stiffens the nap." },
+      { text: "No heat drying", why: "Heat hardens suede and sets stains." },
+      { text: "Do not use liquid removers freely", why: "Liquids spread on suede; use a suede eraser first and liquids only dabbed sparingly." }
+    ]
+  }
+];
+
+/* ---------- lookups ---------- */
+
+function listStains() {
+  return STAIN_DB.map(function (s) {
+    return { id: s.id, name: s.name, emoji: s.emoji, category: s.category, categoryName: categoryName(s.category), urgencyMin: s.urgencyMin };
+  });
+}
+
+function listFabrics() {
+  return FABRIC_DB.map(function (f) { return { id: f.id, name: f.name, emoji: f.emoji }; });
+}
+
+function stainById(id) {
+  for (var i = 0; i < STAIN_DB.length; i++) if (STAIN_DB[i].id === id) return STAIN_DB[i];
+  return null;
+}
+
+function fabricById(id) {
+  for (var i = 0; i < FABRIC_DB.length; i++) if (FABRIC_DB[i].id === id) return FABRIC_DB[i];
+  return null;
+}
+
+/* ---------- urgency ---------- */
+
+function urgencyFor(stainId) {
+  var s = stainById(stainId);
+  if (!s) return { error: "Unknown stain: " + stainId };
+  var label = s.urgencyMin > 0
+    ? "Act within " + s.urgencyMin + " minutes"
+    : "Do not rush - let it dry first";
+  return { minutes: s.urgencyMin, label: label, why: s.urgencyWhy };
+}
+
+/* ---------- warnings ---------- */
+
+function dedupeWarnings(list) {
+  var seen = {}, out = [];
+  for (var i = 0; i < list.length; i++) {
+    var key = list[i].text.toLowerCase();
+    if (!seen[key]) { seen[key] = 1; out.push(list[i]); }
+  }
+  return out;
+}
+
+/* Cross-rule warnings generated from the stain category x fabric combination. */
+function comboWarnings(stain, fabric) {
+  var w = [];
+  if (!stain || !fabric) return w;
+  var cat = stain.category, fid = fabric.id;
+  if (cat === "protein" && (fid === "wool" || fid === "silk")) {
+    w.push({ text: "Double caution: heat sets protein stains AND destroys " + fabric.name.toLowerCase(), why: "This combination is the riskiest: hot water both cooks the protein stain in and damages the animal fibers. Everything stays cold and gentle." });
+  }
+  if (cat === "tannin" && fid === "wool") {
+    w.push({ text: "No hot water on this combination", why: "Heat sets tannin stains and felts wool at the same time." });
+  }
+  if (cat === "dye" && (fid === "polyester" || fid === "denim")) {
+    w.push({ text: "Keep all treatment cold until the dye has lifted", why: "Heat drives dye stains deeper into " + fabric.name.toLowerCase() + " - on synthetics and denim it can become permanent." });
+  }
+  if (cat === "oil" && (fid === "leather" || fid === "suede")) {
+    w.push({ text: "Absorbent powder only - no liquid solvents", why: "Liquid solvents can strip the finish off " + fabric.name.toLowerCase() + ". Cornstarch or talc to absorb, then a professional for the rest." });
+  }
+  if (cat === "mineral" && fid === "silk") {
+    w.push({ text: "Go extra gentle with acids on silk", why: "Lemon and vinegar work on rust but can weaken silk - dilute, test first, and rinse quickly." });
+  }
+  if (stain.id === "nail-polish") {
+    w.push({ text: "Test acetone on a hidden spot first", why: "Acetone is safe on most fabrics but can dull or damage some finishes and prints." });
+  }
+  if ((stain.id === "ink-ballpoint" || stain.id === "ink-marker") && (fid === "silk" || fid === "wool")) {
+    w.push({ text: "Dab alcohol very lightly on " + fabric.name.toLowerCase(), why: "Rubbing alcohol works on ink but can dry out or dull delicate fibers - light dabs, then rinse." });
+  }
+  return w;
+}
+
+function dontDo(stainId, fabricId) {
+  var s = stainById(stainId), f = fabricById(fabricId);
+  if (!s) return { error: "Unknown stain: " + stainId };
+  var list = s.donts.slice();
+  if (f) {
+    list = list.concat(f.donts);
+    list = list.concat(comboWarnings(s, f));
+  }
+  return dedupeWarnings(list);
+}
+
+/* ---------- treatment plan ---------- */
+
+function setInPrepSteps(stain) {
+  var coldProtein = (stain.category === "protein");
+  return [
+    {
+      t: "Rehydrate the dried stain",
+      d: "Work a few drops of glycerin (or plain liquid dish soap) into the dry stain with your fingertip. Dried stains cannot lift until they are soft again.",
+      w: "Let sit 30-60 minutes"
+    },
+    {
+      t: coldProtein ? "Cold soak to loosen" : "Warm soak to loosen",
+      d: coldProtein
+        ? "Soak the area in COLD water with a squirt of enzyme detergent for 1-2 hours. Cold only - heat would cook the remaining protein in."
+        : "Soak the area in warm water with a squirt of enzyme detergent for 1-2 hours to loosen the set stain.",
+      w: "Soak 1-2 hours"
+    }
+  ];
+}
+
+function expectationFor(stain) {
+  var map = {
+    protein: "Honest expectation: a fully dried, heat-exposed protein stain rarely vanishes 100%. Two or three gentle cycles usually fade it to a faint shadow - far better than one harsh attempt that damages the fabric.",
+    tannin: "Honest expectation: dried tannin stains lighten with each cycle. Plan on 2-3 rounds at 60-80% improvement each, with sunlight between rounds on light fabrics.",
+    oil: "Honest expectation: old grease can take 2-3 dish-soap cycles. Each round should visibly shrink the shadow - if progress stalls, switch to an enzyme overnight soak.",
+    dye: "Honest expectation: set dye stains (ink, marker, turmeric, mustard) may only fade, not disappear. Judge the result after air-drying - heat makes any remainder permanent.",
+    wax: "Honest expectation: the wax itself usually lifts fully even when old; any dye tint left behind needs the alcohol step repeated.",
+    mineral: "Honest expectation: old rust is the toughest home stain. Expect lightening rather than erasing, and never use bleach to 'finish' it - bleach makes rust permanent.",
+    particulate: "Honest expectation: dried mud is the easiest 'set' stain - the dry-first method works even on months-old soil. Extend the soak to an hour for caked-on mud."
+  };
+  return (map[stain.category] || map.tannin) + " " + stain.setInNote;
+}
+
+function planFor(stainId, fabricId, setIn) {
+  var s = stainById(stainId);
+  if (!s) return { error: "Unknown stain: '" + stainId + "'. Please pick a stain from the list." };
+  var f = fabricById(fabricId);
+  if (!f) return { error: "Unknown fabric: '" + fabricId + "'. Please pick a fabric from the list." };
+  setIn = !!setIn;
+
+  var steps = [];
+  var n = 0;
+  function add(t, d, w) { n++; steps.push({ n: n, title: t, detail: d, wait: w || "" }); }
+
+  if (setIn) {
+    var prep = setInPrepSteps(s);
+    for (var i = 0; i < prep.length; i++) add(prep[i].t, prep[i].d, prep[i].w);
+  }
+  add(f.name + " guard rails", f.guard, "Read before starting");
+  for (var j = 0; j < s.steps.length; j++) add(s.steps[j].t, s.steps[j].d, s.steps[j].w);
+
+  var warnings = dontDo(stainId, fabricId);
+  if (warnings.error) warnings = [];
+
+  return {
+    stainId: s.id,
+    stainName: s.name,
+    stainEmoji: s.emoji,
+    category: s.category,
+    categoryName: categoryName(s.category),
+    fabricId: f.id,
+    fabricName: f.name,
+    setIn: setIn,
+    urgency: urgencyFor(stainId),
+    steps: steps,
+    warnings: warnings,
+    expectations: setIn ? expectationFor(s) : null
+  };
+}
+
+/* ---------- printable rescue card (plain text) ---------- */
+
+function rescueCardText(stainId, fabricId, setIn) {
+  var p = planFor(stainId, fabricId, setIn);
+  if (p.error) return "StainGone Rescue Card\n\nError: " + p.error;
+  var L = [];
+  L.push("STAINGONE RESCUE CARD");
+  L.push(p.stainEmoji + " " + p.stainName + " on " + p.fabricName + (p.setIn ? " (SET-IN STAIN)" : " (fresh stain)"));
+  L.push("Stain type: " + p.categoryName);
+  L.push("");
+  L.push("URGENCY: " + p.urgency.label.toUpperCase());
+  L.push(p.urgency.why);
+  L.push("");
+  L.push("TREATMENT STEPS:");
+  for (var i = 0; i < p.steps.length; i++) {
+    var st = p.steps[i];
+    L.push((i + 1) + ". " + st.title + (st.wait ? " [" + st.wait + "]" : ""));
+    L.push("   " + st.detail);
+  }
+  L.push("");
+  L.push("WHAT NOT TO DO:");
+  for (var k = 0; k < p.warnings.length; k++) {
+    L.push("- " + p.warnings[k].text);
+    L.push("  Why: " + p.warnings[k].why);
+  }
+  if (p.expectations) {
+    L.push("");
+    L.push("SET-IN EXPECTATIONS:");
+    L.push(p.expectations);
+  }
+  L.push("");
+  L.push("Generated by StainGone - free unlimited stain rescue plans.");
+  return L.join("\n");
+}
+
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var selectedStain = null, selectedFabric = null;
+  var currentPlan = null;
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- pickers ---------- */
+  function renderStains(filter) {
+    var grid = $("stain-grid");
+    var list = listStains();
+    var q = (filter || "").trim().toLowerCase();
+    var html = "";
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (q && s.name.toLowerCase().indexOf(q) < 0 && s.categoryName.toLowerCase().indexOf(q) < 0) continue;
+      var sel = selectedStain === s.id ? " selected" : "";
+      html += '<button type="button" data-stain="' + esc(s.id) + '" class="picker-btn' + sel + ' bg-wash border-2 border-aqualight rounded-xl px-3 py-3 text-left flex items-center gap-2.5" role="option" aria-selected="' + (selectedStain === s.id) + '">'
+        + '<span class="text-2xl flex-none">' + s.emoji + '</span>'
+        + '<span><span class="block text-sm font-extrabold leading-tight">' + esc(s.name) + '</span>'
+        + '<span class="block text-[10px] font-bold text-aquadark/70 uppercase tracking-wide">' + esc(s.categoryName) + '</span></span></button>';
+    }
+    grid.innerHTML = html || '<p class="col-span-full text-sm font-bold text-ink/50 py-4">No stains match "' + esc(filter) + '". Try "wine", "ink", or "oil".</p>';
+    var btns = grid.querySelectorAll("[data-stain]");
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].addEventListener("click", function () {
+        selectedStain = this.getAttribute("data-stain");
+        $("wizard-msg").textContent = "";
+        renderStains($("stain-search").value);
+        updateDots();
+      });
+    }
+  }
+
+  function renderFabrics() {
+    var grid = $("fabric-grid");
+    var list = listFabrics();
+    var html = "";
+    for (var i = 0; i < list.length; i++) {
+      var f = list[i];
+      var sel = selectedFabric === f.id ? " selected" : "";
+      html += '<button type="button" data-fabric="' + esc(f.id) + '" class="picker-btn' + sel + ' bg-wash border-2 border-aqualight rounded-xl px-3 py-3 text-left flex items-center gap-2.5" role="option" aria-selected="' + (selectedFabric === f.id) + '">'
+        + '<span class="text-2xl flex-none">' + f.emoji + '</span>'
+        + '<span class="block text-sm font-extrabold leading-tight">' + esc(f.name) + '</span></button>';
+    }
+    grid.innerHTML = html;
+    var btns = grid.querySelectorAll("[data-fabric]");
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].addEventListener("click", function () {
+        selectedFabric = this.getAttribute("data-fabric");
+        $("wizard-msg").textContent = "";
+        renderFabrics();
+        updateDots();
+      });
+    }
+  }
+
+  function updateDots() {
+    var d1 = $("dot-1"), d2 = $("dot-2"), d3 = $("dot-3");
+    setDot(d1, !!selectedStain); setDot(d2, !!selectedFabric); setDot(d3, false);
+  }
+  function setDot(el, on) {
+    el.className = "w-7 h-7 rounded-full flex items-center justify-center " + (on ? "bg-aqua text-white" : "bg-slate-200 text-ink/60");
+  }
+
+  /* ---------- plan rendering ---------- */
+  function renderPlan(p) {
+    currentPlan = p;
+    $("urgency-label").textContent = p.urgency.label;
+    $("urgency-why").textContent = p.urgency.why;
+    $("plan-emoji").textContent = p.stainEmoji;
+    $("plan-title").textContent = p.stainName + " on " + p.fabricName;
+    $("plan-sub").textContent = p.categoryName + " stain · " + p.steps.length + " steps · " + p.warnings.length + " warnings";
+    var badge = $("plan-setin-badge");
+    if (p.setIn) badge.classList.remove("hidden"); else badge.classList.add("hidden");
+
+    var sg = $("steps-grid"), html = "";
+    for (var i = 0; i < p.steps.length; i++) {
+      var st = p.steps[i];
+      html += '<div class="hang-card bg-wash border-2 border-aqualight rounded-2xl p-4 pt-5 shadow-sm">'
+        + '<span class="peg" aria-hidden="true"></span>'
+        + '<div class="flex items-center gap-2.5 mb-2"><span class="step-num">' + st.n + '</span>'
+        + '<h4 class="font-extrabold text-[15px] leading-snug">' + esc(st.title) + '</h4></div>'
+        + '<p class="text-sm text-ink/75 font-semibold leading-relaxed">' + esc(st.detail) + '</p>'
+        + (st.wait ? '<p class="mt-2.5"><span class="wait-chip">⏱ ' + esc(st.wait) + '</span></p>' : '')
+        + '</div>';
+    }
+    sg.innerHTML = html;
+
+    var wg = $("warnings-grid"), wh = "";
+    for (var k = 0; k < p.warnings.length; k++) {
+      var w = p.warnings[k];
+      wh += '<div class="bg-corallight/70 border-2 border-coral/40 rounded-2xl p-4 flex gap-3">'
+        + '<span class="text-xl flex-none" aria-hidden="true">🚫</span>'
+        + '<div><p class="font-extrabold text-sm text-coraldark">' + esc(w.text) + '</p>'
+        + '<p class="text-xs font-semibold text-ink/65 mt-1 leading-relaxed">' + esc(w.why) + '</p></div></div>';
+    }
+    wg.innerHTML = wh;
+
+    var eb = $("expect-box");
+    if (p.expectations) { eb.classList.remove("hidden"); $("expect-text").textContent = p.expectations; }
+    else { eb.classList.add("hidden"); }
+
+    $("result").classList.remove("hidden");
+    setDot($("dot-3"), true);
+    $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+    $("action-msg").textContent = "";
+  }
+
+  $("generate-btn").addEventListener("click", function () {
+    var msg = $("wizard-msg");
+    if (!selectedStain && !selectedFabric) { msg.textContent = "Pick a stain (step 1) and a fabric (step 2) to build your rescue plan."; return; }
+    if (!selectedStain) { msg.textContent = "Pick a stain first (step 1) — what spilled?"; return; }
+    if (!selectedFabric) { msg.textContent = "Now pick the fabric (step 2) — it changes the treatment rules."; return; }
+    msg.textContent = "";
+    var setIn = $("setin-toggle").checked;
+    var p = planFor(selectedStain, selectedFabric, setIn);
+    if (p.error) { msg.textContent = p.error; return; }
+    renderPlan(p);
+  });
+
+  $("stain-search").addEventListener("input", function () { renderStains(this.value); });
+
+  /* ---------- actions: print / copy / save ---------- */
+  function fillPrintCard(p) {
+    var h = '<div style="font-family:Georgia,serif;color:#111;max-width:640px;margin:0 auto;padding:24px">'
+      + '<h1 style="font-size:22px;margin:0 0 4px">StainGone Rescue Card</h1>'
+      + '<p style="margin:0 0 12px;font-size:14px"><strong>' + esc(p.stainName) + '</strong> on <strong>' + esc(p.fabricName) + '</strong>'
+      + (p.setIn ? ' (SET-IN STAIN)' : ' (fresh stain)') + ' — ' + esc(p.categoryName) + '</p>'
+      + '<p style="font-size:14px"><strong>URGENCY: ' + esc(p.urgency.label) + '</strong><br>' + esc(p.urgency.why) + '</p>'
+      + '<h2 style="font-size:16px;margin:16px 0 6px">Treatment steps</h2><ol style="font-size:13px;line-height:1.5;padding-left:20px">';
+    for (var i = 0; i < p.steps.length; i++) {
+      var st = p.steps[i];
+      h += '<li style="margin-bottom:8px"><strong>' + esc(st.title) + '</strong>' + (st.wait ? ' <em>(' + esc(st.wait) + ')</em>' : '') + '<br>' + esc(st.detail) + '</li>';
+    }
+    h += '</ol><h2 style="font-size:16px;margin:16px 0 6px">What NOT to do</h2><ul style="font-size:13px;line-height:1.5;padding-left:20px">';
+    for (var k = 0; k < p.warnings.length; k++) h += '<li style="margin-bottom:6px"><strong>' + esc(p.warnings[k].text) + '</strong> — ' + esc(p.warnings[k].why) + '</li>';
+    h += '</ul>';
+    if (p.expectations) h += '<h2 style="font-size:16px;margin:16px 0 6px">Set-in expectations</h2><p style="font-size:13px;line-height:1.5">' + esc(p.expectations) + '</p>';
+    h += '<p style="font-size:11px;color:#555;margin-top:16px">Generated by StainGone — free unlimited stain rescue plans.</p></div>';
+    $("print-card").innerHTML = h;
+  }
+
+  $("print-btn").addEventListener("click", function () {
+    if (!currentPlan) return;
+    fillPrintCard(currentPlan);
+    document.body.classList.add("printing");
+    window.print();
+  });
+  window.addEventListener("afterprint", function () { document.body.classList.remove("printing"); });
+
+  $("copy-btn").addEventListener("click", function () {
+    if (!currentPlan) return;
+    var text = rescueCardText(currentPlan.stainId, currentPlan.fabricId, currentPlan.setIn);
+    function done(okMsg) { $("action-msg").textContent = okMsg; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done("✓ Plan copied to clipboard"); }, function () { done("Copy blocked by browser — use Print instead."); });
+    } else { done("Copy not supported here — use Print instead."); }
+  });
+
+  /* ---------- saved plans (localStorage, UI layer only) ---------- */
+  var SAVE_KEY = "staingone-saved-v1";
+  function loadSaved() {
+    try { return JSON.parse(localStorage.getItem(SAVE_KEY) || "[]"); } catch (e) { return []; }
+  }
+  function storeSaved(list) {
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  function renderSaved() {
+    var list = loadSaved(), box = $("saved-list");
+    if (!list.length) { box.innerHTML = '<p class="text-sm font-bold text-ink/40">No saved plans yet — generate a plan and hit "Save plan".</p>'; return; }
+    var html = "";
+    for (var i = 0; i < list.length; i++) {
+      var it = list[i], s = stainById(it.stainId), f = fabricById(it.fabricId);
+      if (!s || !f) continue;
+      html += '<span class="inline-flex items-center gap-2 bg-aqualight border border-aqua/40 rounded-full pl-3 pr-1.5 py-1 text-xs font-extrabold">'
+        + '<button type="button" data-load="' + i + '" class="hover:text-aquadark" title="Load this plan">' + s.emoji + ' ' + esc(s.name) + ' → ' + esc(f.name) + (it.setIn ? ' (set-in)' : '') + '</button>'
+        + '<button type="button" data-del="' + i + '" class="w-5 h-5 rounded-full bg-coral/20 text-coraldark font-black leading-none" title="Delete" aria-label="Delete saved plan">×</button></span>';
+    }
+    box.innerHTML = html || '<p class="text-sm font-bold text-ink/40">No saved plans yet.</p>';
+    var lb = box.querySelectorAll("[data-load]"), db = box.querySelectorAll("[data-del]");
+    for (var a = 0; a < lb.length; a++) lb[a].addEventListener("click", function () {
+      var it = loadSaved()[+this.getAttribute("data-load")];
+      if (!it) return;
+      selectedStain = it.stainId; selectedFabric = it.fabricId;
+      $("setin-toggle").checked = !!it.setIn;
+      renderStains($("stain-search").value); renderFabrics(); updateDots();
+      var p = planFor(it.stainId, it.fabricId, it.setIn);
+      if (!p.error) renderPlan(p);
+    });
+    for (var b = 0; b < db.length; b++) db[b].addEventListener("click", function () {
+      var list2 = loadSaved(); list2.splice(+this.getAttribute("data-del"), 1); storeSaved(list2); renderSaved();
+    });
+  }
+
+  $("save-btn").addEventListener("click", function () {
+    if (!currentPlan) return;
+    var list = loadSaved();
+    list.unshift({ stainId: currentPlan.stainId, fabricId: currentPlan.fabricId, setIn: currentPlan.setIn, ts: Date.now() });
+    storeSaved(list.slice(0, 20));
+    renderSaved();
+    $("action-msg").textContent = "✓ Plan saved in this browser";
+  });
+
+  /* ---------- init ---------- */
+  renderStains("");
+  renderFabrics();
+  renderSaved();
+})();
+</script>
+</body>
+</html>
